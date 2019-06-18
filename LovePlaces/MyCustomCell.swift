@@ -11,9 +11,9 @@ import UIKit
 class MyCustomCell: UITableViewCell {
 
     @IBOutlet weak var imageOfPlace: UIImageView!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var location: UILabel!
-    @IBOutlet weak var type: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
     
 
 }
