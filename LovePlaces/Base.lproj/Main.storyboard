@@ -109,7 +109,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="ZqA-Xb-B4W">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="249.66666666666666"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -240,23 +240,27 @@
                     <navigationItem key="navigationItem" title="New Place" id="PLV-Tm-B2z">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="abg-tB-Cgf">
                             <connections>
-                                <segue destination="CvI-qI-2ZP" kind="unwind" unwindAction="cancelAction:" id="sIx-l3-RVc"/>
+                                <action selector="cancelAction:" destination="won-q7-uXZ" id="3Re-Ha-OJe"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2fd-qq-tu3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2fd-qq-tu3">
+                            <connections>
+                                <segue destination="CvI-qI-2ZP" kind="unwind" unwindAction="unwindSegue:" id="zj0-s6-ogS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imagePlace" destination="ZqA-Xb-B4W" id="zhm-uf-qr3"/>
+                        <outlet property="placeImage" destination="ZqA-Xb-B4W" id="zhm-uf-qr3"/>
                         <outlet property="placeLocation" destination="NeX-Q2-MKg" id="92b-0b-Zan"/>
                         <outlet property="placeName" destination="N3m-jU-BPb" id="EZj-qV-Ec1"/>
+                        <outlet property="placeType" destination="RWv-MP-YaE" id="m4m-U6-SyU"/>
                         <outlet property="saveButton" destination="2fd-qq-tu3" id="WLu-yA-235"/>
-                        <outlet property="typeOutlet" destination="RWv-MP-YaE" id="m4m-U6-SyU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9Y-mU-qkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="CvI-qI-2ZP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2879" y="117"/>
+            <point key="canvasLocation" x="2094" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Prt-kt-dNJ">
@@ -302,7 +306,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scK-9r-cJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="117"/>
+            <point key="canvasLocation" x="1362" y="117"/>
         </scene>
     </scenes>
     <resources>
