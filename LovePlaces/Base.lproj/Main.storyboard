@@ -191,7 +191,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PAM-Az-Jl4">
-                                <rect key="frame" x="0.0" y="178.66666666666669" width="375" height="633.33333333333326"/>
+                                <rect key="frame" x="0.0" y="169" width="375" height="643"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gfz-n2-pbp" customClass="MyCustomCell" customModule="LovePlaces" customModuleProvider="target">
@@ -256,11 +256,14 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nZj-Kl-Cda">
-                                <rect key="frame" x="0.0" y="149.66666666666666" width="375" height="29"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="29"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
                                 </segments>
+                                <connections>
+                                    <action selector="sortSelection:" destination="tTc-Vn-F84" eventType="valueChanged" id="krQ-n8-RSY"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -276,7 +279,11 @@
                         <viewLayoutGuide key="safeArea" id="FpA-lb-Uy5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Love Places" id="rGQ-Sm-Ula">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="aHC-Ec-RB6"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="aHC-Ec-RB6">
+                            <connections>
+                                <action selector="reverseSorting:" destination="tTc-Vn-F84" id="QSq-Zc-gao"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ivv-jV-fgz">
                             <connections>
                                 <segue destination="WnD-z9-ahb" kind="show" id="lUu-yS-nqH"/>
@@ -284,6 +291,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reverseSegment" destination="aHC-Ec-RB6" id="oPM-Kb-DYB"/>
+                        <outlet property="segmentedControl" destination="nZj-Kl-Cda" id="boF-Mt-tMn"/>
                         <outlet property="tableView" destination="PAM-Az-Jl4" id="VJv-sn-gns"/>
                     </connections>
                 </viewController>
