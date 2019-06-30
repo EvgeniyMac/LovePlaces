@@ -191,7 +191,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PAM-Az-Jl4">
-                                <rect key="frame" x="0.0" y="169" width="375" height="643"/>
+                                <rect key="frame" x="0.0" y="178.66666666666669" width="375" height="633.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gfz-n2-pbp" customClass="MyCustomCell" customModule="LovePlaces" customModuleProvider="target">
@@ -256,7 +256,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nZj-Kl-Cda">
-                                <rect key="frame" x="0.0" y="140" width="375" height="29"/>
+                                <rect key="frame" x="0.0" y="149.66666666666666" width="375" height="29"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
