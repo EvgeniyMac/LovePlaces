@@ -3,6 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -137,6 +138,7 @@
 				};
 			};
 			buildConfigurationList = 818CD60922B8D310004B6692 /* Build configuration list for PBXProject "LovePlaces" */;
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -253,6 +255,7 @@
 /* Begin XCBuildConfiguration section */
 		818CD61E22B8D310004B6692 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29D4B9346DFA4FECDD965D6C /* Pods-LovePlaces.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
