@@ -149,6 +149,32 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="90" id="ZFz-RV-e6T">
+                                        <rect key="frame" x="0.0" y="490" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZFz-RV-e6T" id="8U5-Ei-Gxn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfK-w4-lvg" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="65" y="22.666666666666671" width="245" height="45"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="45"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yfK-w4-lvg" firstAttribute="centerY" secondItem="8U5-Ei-Gxn" secondAttribute="centerY" id="7mp-lg-hJU"/>
+                                                <constraint firstItem="yfK-w4-lvg" firstAttribute="centerX" secondItem="8U5-Ei-Gxn" secondAttribute="centerX" id="dBi-2w-mcA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -157,7 +183,7 @@
                             <outlet property="delegate" destination="won-q7-uXZ" id="LBG-Ey-kw8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Place" id="PLV-Tm-B2z">
+                    <navigationItem key="navigationItem" title="New Place" largeTitleDisplayMode="always" id="PLV-Tm-B2z">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="abg-tB-Cgf">
                             <connections>
                                 <action selector="cancelAction:" destination="won-q7-uXZ" id="3Re-Ha-OJe"/>
@@ -174,13 +200,14 @@
                         <outlet property="placeLocation" destination="NeX-Q2-MKg" id="92b-0b-Zan"/>
                         <outlet property="placeName" destination="N3m-jU-BPb" id="EZj-qV-Ec1"/>
                         <outlet property="placeType" destination="RWv-MP-YaE" id="m4m-U6-SyU"/>
+                        <outlet property="ratingControl" destination="yfK-w4-lvg" id="Qnq-G4-uTM"/>
                         <outlet property="saveButton" destination="2fd-qq-tu3" id="WLu-yA-235"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9Y-mU-qkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="CvI-qI-2ZP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="117"/>
+            <point key="canvasLocation" x="1500" y="116.74876847290641"/>
         </scene>
         <!--Love Places-->
         <scene sceneID="luL-rQ-6hu">
@@ -191,7 +218,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PAM-Az-Jl4">
-                                <rect key="frame" x="0.0" y="178.66666666666669" width="375" height="633.33333333333326"/>
+                                <rect key="frame" x="0.0" y="117" width="375" height="695"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gfz-n2-pbp" customClass="MyCustomCell" customModule="LovePlaces" customModuleProvider="target">
@@ -209,42 +236,60 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4Wp-UB-bPZ">
-                                                    <rect key="frame" x="100" y="10" width="255" height="64.666666666666671"/>
+                                                    <rect key="frame" x="100" y="10" width="132" height="64.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BM9-8f-hfI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="255" height="23.666666666666668"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="132" height="23.666666666666668"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9l-XB-ybs">
-                                                            <rect key="frame" x="0.0" y="25.666666666666664" width="255" height="20"/>
+                                                            <rect key="frame" x="0.0" y="25.666666666666664" width="132" height="20"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQQ-D7-vWb">
-                                                            <rect key="frame" x="0.0" y="47.666666666666664" width="255" height="16.999999999999993"/>
+                                                            <rect key="frame" x="0.0" y="47.666666666666664" width="132" height="16.999999999999993"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="0tk-Ti-CJj" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="240" y="32.333333333333336" width="120" height="20"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="FXq-C8-TvA"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4Wp-UB-bPZ" firstAttribute="leading" secondItem="01C-YQ-5Fe" secondAttribute="trailing" constant="20" id="3oj-mO-b3N"/>
                                                 <constraint firstAttribute="bottom" secondItem="4Wp-UB-bPZ" secondAttribute="bottom" constant="10" id="GXv-s0-RYN"/>
-                                                <constraint firstAttribute="trailing" secondItem="4Wp-UB-bPZ" secondAttribute="trailing" constant="20" id="IiL-qH-rHg"/>
+                                                <constraint firstItem="0tk-Ti-CJj" firstAttribute="leading" secondItem="4Wp-UB-bPZ" secondAttribute="trailing" constant="8" id="P1c-6a-fIy"/>
                                                 <constraint firstItem="01C-YQ-5Fe" firstAttribute="leading" secondItem="1MW-Iw-WMN" secondAttribute="leading" constant="15" id="S9g-Nj-dYg"/>
                                                 <constraint firstItem="01C-YQ-5Fe" firstAttribute="centerY" secondItem="1MW-Iw-WMN" secondAttribute="centerY" id="XSf-R3-1sN"/>
                                                 <constraint firstItem="4Wp-UB-bPZ" firstAttribute="top" secondItem="1MW-Iw-WMN" secondAttribute="top" constant="10" id="eUU-GQ-1I8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0tk-Ti-CJj" secondAttribute="trailing" id="kQq-7h-PNh"/>
+                                                <constraint firstItem="0tk-Ti-CJj" firstAttribute="centerY" secondItem="1MW-Iw-WMN" secondAttribute="centerY" id="zGU-Bk-5dz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageOfPlace" destination="01C-YQ-5Fe" id="Z40-iP-Z4Z"/>
                                             <outlet property="locationLabel" destination="Z9l-XB-ybs" id="Mrs-ZW-5PE"/>
                                             <outlet property="nameLabel" destination="BM9-8f-hfI" id="WV9-Wh-J2A"/>
+                                            <outlet property="ratingCell" destination="0tk-Ti-CJj" id="WAT-Mi-ZVW"/>
                                             <outlet property="typeLabel" destination="VQQ-D7-vWb" id="qEG-H3-Vnc"/>
                                             <segue destination="won-q7-uXZ" kind="show" identifier="showDetail" id="4JP-Ze-ikK"/>
                                         </connections>
@@ -256,7 +301,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nZj-Kl-Cda">
-                                <rect key="frame" x="0.0" y="149.66666666666666" width="375" height="29"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="29"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
@@ -278,7 +323,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FpA-lb-Uy5"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Love Places" id="rGQ-Sm-Ula">
+                    <navigationItem key="navigationItem" title="Love Places" largeTitleDisplayMode="never" id="rGQ-Sm-Ula">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="aHC-Ec-RB6">
                             <connections>
                                 <action selector="reverseSorting:" destination="tTc-Vn-F84" id="QSq-Zc-gao"/>

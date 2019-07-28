@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		8194C2EC22B92E9E00819212 /* NewPlaceControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194C2EB22B92E9E00819212 /* NewPlaceControler.swift */; };
 		819FF69C22BB918D00BF1529 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819FF69B22BB918D00BF1529 /* StorageManager.swift */; };
 		81C5D68322B8F6A600DE382A /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5D68222B8F6A600DE382A /* PlaceModel.swift */; };
+		81F1C70622ECA286009F9098 /* RaitingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C70522ECA286009F9098 /* RaitingStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8194C2EB22B92E9E00819212 /* NewPlaceControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceControler.swift; sourceTree = "<group>"; };
 		819FF69B22BB918D00BF1529 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		81C5D68222B8F6A600DE382A /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		81F1C70522ECA286009F9098 /* RaitingStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaitingStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				819FF69B22BB918D00BF1529 /* StorageManager.swift */,
 				8194C2EB22B92E9E00819212 /* NewPlaceControler.swift */,
 				818CD62322B8D392004B6692 /* MainViewControler.swift */,
+				81F1C70522ECA286009F9098 /* RaitingStack.swift */,
 				818CD61822B8D310004B6692 /* Assets.xcassets */,
 				818CD61522B8D310004B6692 /* Main.storyboard */,
 				818CD61A22B8D310004B6692 /* LaunchScreen.storyboard */,
@@ -138,7 +141,7 @@
 				};
 			};
 			buildConfigurationList = 818CD60922B8D310004B6692 /* Build configuration list for PBXProject "LovePlaces" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -197,18 +200,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LovePlaces/Pods-LovePlaces-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-LovePlaces/Pods-LovePlaces-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-LovePlaces/Pods-LovePlaces-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -226,6 +222,7 @@
 				81C5D68322B8F6A600DE382A /* PlaceModel.swift in Sources */,
 				8194C2EC22B92E9E00819212 /* NewPlaceControler.swift in Sources */,
 				819FF69C22BB918D00BF1529 /* StorageManager.swift in Sources */,
+				81F1C70622ECA286009F9098 /* RaitingStack.swift in Sources */,
 				818CD62422B8D392004B6692 /* MainViewControler.swift in Sources */,
 				818CD61222B8D310004B6692 /* AppDelegate.swift in Sources */,
 			);
@@ -373,6 +370,7 @@
 		};
 		818CD62122B8D310004B6692 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29D4B9346DFA4FECDD965D6C /* Pods-LovePlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,6 +390,7 @@
 		};
 		818CD62222B8D310004B6692 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DADCA244C8D26630E5678A7 /* Pods-LovePlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
