@@ -107,7 +107,7 @@ import UIKit
     
     private func updateButtonSelectedState() {
         for (index, button) in ratingButtons.enumerated() {
-        button.isSelected = index < rating
+            button.isSelected = index < rating
         }
     }
 }

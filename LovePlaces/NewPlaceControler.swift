@@ -34,6 +34,14 @@ class NewPlaceControler: UITableViewController {
             
         }
         
+        // Mark Check version ios for LargeTitle
+        
+        if #available(iOS 11.0, *) {
+            guard let navigationController = navigationController else { return }
+            guard navigationController.navigationBar.prefersLargeTitles else { return }
+            guard navigationController.navigationItem.largeTitleDisplayMode != .never else { return }
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -96,17 +104,23 @@ extension NewPlaceControler: UITextFieldDelegate {
             saveButton.isEnabled = false
         }
     }
+    
+    // MARK: Navigation MapController
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap" {
+            return
+        }
+        
+        let mapVC = segue.destination as! MapViewController
+        mapVC.place = currentPlace
+    }
+
     //MARK:  Save Data after press button
     
     func savePlace() {
         
-        var image: UIImage?
-        
-        if isImageChanged {
-            image = placeImage.image
-        } else {
-            image = UIImage(named: "imagePlaceholder")
-        }
+        let image = isImageChanged ? placeImage.image : UIImage(named: "imagePlaceholder")
         
         let imageData = image?.pngData()
         
