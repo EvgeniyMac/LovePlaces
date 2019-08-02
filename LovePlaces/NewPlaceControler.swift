@@ -31,7 +31,12 @@ class NewPlaceControler: UITableViewController {
         
         ratingControl.didTouchCosmos = { rating in
             self.currentRating = rating
-            
+        }
+        
+        if currentPlace != nil {
+            if currentRating == 0.0 {
+                currentRating = currentPlace.rating
+            }
         }
         
         // Mark Check version ios for LargeTitle
@@ -124,7 +129,7 @@ extension NewPlaceControler: UITextFieldDelegate {
         let image = isImageChanged ? placeImage.image : UIImage(named: "imagePlaceholder")
         
         let imageData = image?.pngData()
-        
+    
         let newPlace = Place(name: placeName.text!, location: placeLocation.text!, type: placeType.text!, imageData: imageData, rating: currentRating)
         
         if currentPlace != nil {

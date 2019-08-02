@@ -42,6 +42,7 @@ class MainViewControler: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         
      // Setup serch controller
+        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
