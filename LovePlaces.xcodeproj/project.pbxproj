@@ -69,9 +69,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8143F2B422F3BF1D00C60556 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8194C2EB22B92E9E00819212 /* NewPlaceControler.swift */,
+				818CD62322B8D392004B6692 /* MainViewControler.swift */,
+				8137B45E22EE493900D31B3A /* MapViewController.swift */,
+				818CD62522B8EB90004B6692 /* MyCustomCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8143F2B522F3BF5100C60556 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81C5D68222B8F6A600DE382A /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8143F2B622F3BF7D00C60556 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				818CD61522B8D310004B6692 /* Main.storyboard */,
+				818CD61A22B8D310004B6692 /* LaunchScreen.storyboard */,
+				818CD61D22B8D310004B6692 /* Info.plist */,
+			);
+			path = IBuilder;
+			sourceTree = "<group>";
+		};
+		8143F2B922F3BFF900C60556 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		818CD60522B8D310004B6692 = {
 			isa = PBXGroup;
 			children = (
+				8143F2B422F3BF1D00C60556 /* ViewControllers */,
+				8143F2B922F3BFF900C60556 /* Helpers */,
+				8143F2B622F3BF7D00C60556 /* IBuilder */,
+				8143F2B522F3BF5100C60556 /* Models */,
 				818CD61022B8D310004B6692 /* LovePlaces */,
 				818CD60F22B8D310004B6692 /* Products */,
 				17E20D0A1CCC642D780029CE /* Pods */,
@@ -90,18 +130,10 @@
 		818CD61022B8D310004B6692 /* LovePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				818CD61122B8D310004B6692 /* AppDelegate.swift */,
-				818CD62522B8EB90004B6692 /* MyCustomCell.swift */,
-				81C5D68222B8F6A600DE382A /* PlaceModel.swift */,
-				819FF69B22BB918D00BF1529 /* StorageManager.swift */,
-				8194C2EB22B92E9E00819212 /* NewPlaceControler.swift */,
-				818CD62322B8D392004B6692 /* MainViewControler.swift */,
-				8137B45E22EE493900D31B3A /* MapViewController.swift */,
-				81F1C70522ECA286009F9098 /* RaitingStack.swift */,
 				818CD61822B8D310004B6692 /* Assets.xcassets */,
-				818CD61522B8D310004B6692 /* Main.storyboard */,
-				818CD61A22B8D310004B6692 /* LaunchScreen.storyboard */,
-				818CD61D22B8D310004B6692 /* Info.plist */,
+				818CD61122B8D310004B6692 /* AppDelegate.swift */,
+				819FF69B22BB918D00BF1529 /* StorageManager.swift */,
+				81F1C70522ECA286009F9098 /* RaitingStack.swift */,
 			);
 			path = LovePlaces;
 			sourceTree = "<group>";
@@ -379,7 +411,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5U6B2N2Y5;
-				INFOPLIST_FILE = LovePlaces/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/IBuilder/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -399,7 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5U6B2N2Y5;
-				INFOPLIST_FILE = LovePlaces/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/IBuilder/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
