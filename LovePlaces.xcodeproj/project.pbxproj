@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7451A80B20466175858BC907 /* Pods_LovePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8C02D1C06A85D3DBC9DD99 /* Pods_LovePlaces.framework */; };
 		8137B45F22EE493A00D31B3A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8137B45E22EE493900D31B3A /* MapViewController.swift */; };
+		8143F2DE22F8C48B00C60556 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8143F2DD22F8C48B00C60556 /* MapManager.swift */; };
 		818CD61222B8D310004B6692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818CD61122B8D310004B6692 /* AppDelegate.swift */; };
 		818CD61722B8D310004B6692 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818CD61522B8D310004B6692 /* Main.storyboard */; };
 		818CD61922B8D310004B6692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818CD61822B8D310004B6692 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		3F8C02D1C06A85D3DBC9DD99 /* Pods_LovePlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LovePlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DADCA244C8D26630E5678A7 /* Pods-LovePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LovePlaces.release.xcconfig"; path = "Target Support Files/Pods-LovePlaces/Pods-LovePlaces.release.xcconfig"; sourceTree = "<group>"; };
 		8137B45E22EE493900D31B3A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8143F2DD22F8C48B00C60556 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		818CD60E22B8D310004B6692 /* LovePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LovePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818CD61122B8D310004B6692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		818CD61622B8D310004B6692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				818CD61522B8D310004B6692 /* Main.storyboard */,
 				818CD61A22B8D310004B6692 /* LaunchScreen.storyboard */,
 				818CD61D22B8D310004B6692 /* Info.plist */,
+				8143F2DD22F8C48B00C60556 /* MapManager.swift */,
 			);
 			path = IBuilder;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				81C5D68322B8F6A600DE382A /* PlaceModel.swift in Sources */,
 				8194C2EC22B92E9E00819212 /* NewPlaceControler.swift in Sources */,
 				819FF69C22BB918D00BF1529 /* StorageManager.swift in Sources */,
+				8143F2DE22F8C48B00C60556 /* MapManager.swift in Sources */,
 				81F1C70622ECA286009F9098 /* RaitingStack.swift in Sources */,
 				818CD62422B8D392004B6692 /* MainViewControler.swift in Sources */,
 				818CD61222B8D310004B6692 /* AppDelegate.swift in Sources */,

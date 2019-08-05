@@ -17,6 +17,12 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     let locationDistans = 250.00
     var placeCoordinate: CLLocationCoordinate2D?
+    var directionsArray: [MKDirections] = []
+    var previusLocation: CLLocation? {
+        didSet {
+            startTrackingUserLocation()
+        }
+    }
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var showWayOutlet: UIButton!
@@ -39,25 +45,21 @@ class MapViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func centerViewInUserLocation() {
-        
-        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: location, latitudinalMeters: locationDistans, longitudinalMeters: locationDistans)
-            mapView.setRegion(region, animated: true)
-        }
-        
+    @IBAction func centerUserButton() {
+        centerUserLocation()
     }
     
     // MARK: - Center place location
     
     @IBAction func showPlaceInMap(_ sender: Any) {
-        setupPlacemark()
+       setupPlacemark()
        checkLocationServices()
     }
     
     @IBAction func showWayButton(_ sender: UIButton) {
         getDirection()
     }
+    
     private func setupPlacemark() {
         
         guard let location = place.location else {return}
@@ -106,6 +108,36 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
+    private func centerUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location, latitudinalMeters: locationDistans, longitudinalMeters: locationDistans)
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    private func getCenterLocation(mapView: MKMapView) -> CLLocation {
+        
+        let latitude = mapView.centerCoordinate.latitude
+        let logtitude = mapView.centerCoordinate.longitude
+        
+        return CLLocation(latitude: latitude, longitude: logtitude)
+    }
+    
+    //MARK: Start tracking user location
+    
+    private func startTrackingUserLocation() {
+        
+        guard let previusLocation = previusLocation else { return }
+        let center = getCenterLocation(mapView: mapView)
+        guard center.distance(from: previusLocation) > 50 else { return }
+        self.previusLocation = center
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.centerUserLocation()
+        }
+    }
+    
+    
     // MARK: Get direction for check location User to Place
     
     func getDirection() {
@@ -115,12 +147,17 @@ class MapViewController: UIViewController {
             return
         }
         
+        locationManager.startUpdatingLocation()
+        previusLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        
         guard let request = createDirectionRequest(coordinate: location) else {
             checkLocationAlertController(title: "Error", message: "Destination is not found")
             return
         }
         
         let direction = MKDirections(request: request)
+        resetMapDirections(directions: direction)
+        
         direction.calculate { (responce, error) in
             if let error = error {
                 print(error)
@@ -133,9 +170,21 @@ class MapViewController: UIViewController {
             }
             
             for route in responce.routes {
-                self.mapView.addOverlay(route.polyline)
-                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
                 
+                self.mapView.addOverlay(route.polyline)
+                
+                var regionRect = route.polyline.boundingMapRect
+        
+                //
+                let wPadding = regionRect.size.width * 0.5
+                let hPadding = regionRect.size.height * 0.5
+                regionRect.size.width += wPadding
+                regionRect.size.height += hPadding
+                regionRect.origin.x -= wPadding / 2
+                regionRect.origin.y -= hPadding / 2
+                
+                self.mapView.setVisibleMapRect(regionRect, animated: true)
+                self.distanceStack.isHidden = false
                 
                 if route.expectedTravelTime < 60 {
                     let timeInterval = String(format: "%.0f", route.expectedTravelTime)
@@ -147,7 +196,7 @@ class MapViewController: UIViewController {
                     let timeInterval = String(format: "%.0f", route.expectedTravelTime / 60)
                     self.timeLabel.text = "\(timeInterval)мин"
                 }
-
+                
                 if route.distance < 1000 {
                     let distance = String(format: "%.0f", route.distance)
                     self.distanceLabel.text = "\(distance)м"
@@ -155,9 +204,6 @@ class MapViewController: UIViewController {
                     let distance = String(format: "%.1f", route.distance / 1000)
                     self.distanceLabel.text = "\(distance)км"
                 }
-                self.distanceStack.isHidden = false
-                self.distanceLabel.textColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.7764705882, alpha: 1)
-                self.timeLabel.textColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.7764705882, alpha: 1)
                 
             }
         }
@@ -177,6 +223,13 @@ class MapViewController: UIViewController {
         request.requestsAlternateRoutes = true
         
         return request
+    }
+    
+    private func resetMapDirections(directions: MKDirections) {
+        mapView.removeOverlays(mapView.overlays)
+        directionsArray.append(directions)
+        let _ = directionsArray.map {$0.cancel()}
+        directionsArray.removeAll()
     }
     
     // MARK: Alert controller Location service not avalaible
@@ -245,6 +298,7 @@ extension MapViewController: MKMapViewDelegate {
         }
         return anotationView
     }
+    
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         

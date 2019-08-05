@@ -15,6 +15,7 @@ class NewPlaceControler: UITableViewController {
     var isImageChanged = false
     var currentRating = 0.0
     
+    
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var placeName: UITextField!
@@ -85,8 +86,20 @@ class NewPlaceControler: UITableViewController {
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+        
     }
     
+    @IBAction func saveDataButton(_ sender: UIBarButtonItem) {
+        
+        savePlace()
+        let alert = UIAlertController(title: "Данные сохранены", message: nil, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Ок", style: .cancel) { (_) in
+       //FIXIT -     self.placeName.resignFirstResponder()
+        }
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+        
+    }
     
 }
 

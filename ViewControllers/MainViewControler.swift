@@ -41,6 +41,7 @@ class MainViewControler: UIViewController, UITableViewDelegate, UITableViewDataS
             guard navigationController.navigationItem.largeTitleDisplayMode != .never else { return }
         }
         
+    
      // Setup serch controller
         
         searchController.searchResultsUpdater = self
@@ -49,6 +50,10 @@ class MainViewControler: UIViewController, UITableViewDelegate, UITableViewDataS
         navigationItem.searchController = searchController
         definesPresentationContext = true
        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -106,12 +111,14 @@ class MainViewControler: UIViewController, UITableViewDelegate, UITableViewDataS
     
     // MARK: Save new place and reload Data!
     
-    @IBAction func unwindSegue(_ segue: UIStoryboardSegue){
-        
-        guard let newPlaceVC = segue.source as? NewPlaceControler else {return}
-        newPlaceVC.savePlace()
-        tableView.reloadData()
-    }
+//    @IBAction func unwindSegue(_ segue: UIStoryboardSegue){
+//        
+////        guard let newPlaceVC = segue.source as? NewPlaceControler else {return}
+////        // newPlaceVC.savePlace()
+//        tableView.reloadData()
+//    }
+    
+    
     @IBAction func sortSelection(_ sender: UISegmentedControl) {
         
        sorting()

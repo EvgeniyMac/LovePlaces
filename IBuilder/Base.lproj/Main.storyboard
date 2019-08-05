@@ -37,7 +37,7 @@
                                                         <constraint firstAttribute="height" constant="55" id="0zE-pD-Esk"/>
                                                         <constraint firstAttribute="width" constant="55" id="acF-1c-CEC"/>
                                                     </constraints>
-                                                    <state key="normal" image="mapPlace"/>
+                                                    <state key="normal" image="mapPlace2"/>
                                                     <connections>
                                                         <segue destination="6ew-tL-OOs" kind="presentation" identifier="showMap" id="0aT-yK-g2F"/>
                                                     </connections>
@@ -207,7 +207,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="2fd-qq-tu3">
                             <connections>
-                                <segue destination="CvI-qI-2ZP" kind="unwind" unwindAction="unwindSegue:" id="zj0-s6-ogS"/>
+                                <action selector="saveDataButton:" destination="won-q7-uXZ" id="0Gk-T6-e2K"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -221,7 +221,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9Y-mU-qkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="CvI-qI-2ZP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1500" y="116.74876847290641"/>
         </scene>
@@ -258,7 +257,7 @@
                                         </constraints>
                                         <state key="normal" image="navigation"/>
                                         <connections>
-                                            <action selector="centerViewInUserLocation" destination="6ew-tL-OOs" eventType="touchUpInside" id="CNh-xo-mOm"/>
+                                            <action selector="centerUserButton" destination="6ew-tL-OOs" eventType="touchUpInside" id="CNh-xo-mOm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TkW-mz-LmZ">
@@ -302,7 +301,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="Qr0-x5-MKC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.0" green="0.49803921568627452" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="jU0-hy-8N0">
@@ -318,7 +317,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="AXy-A5-3yS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.0" green="0.49803921568627452" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -541,7 +540,7 @@
         <image name="clock" width="170.66667175292969" height="170.66667175292969"/>
         <image name="destination" width="115" height="115"/>
         <image name="distance" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="mapPlace" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="mapPlace2" width="170.66667175292969" height="170.66667175292969"/>
         <image name="navigation" width="170.66667175292969" height="170.66667175292969"/>
         <image name="place" width="115" height="115"/>
     </resources>
