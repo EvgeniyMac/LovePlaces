@@ -6,5 +6,5 @@ target 'LovePlaces' do
   use_frameworks!
 
   pod 'RealmSwift'
-
+  pod 'Cosmos', '~> 19.0' 
 end
